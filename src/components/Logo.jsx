@@ -1,52 +1,57 @@
 export default function Logo({ color = '#1f3a5f' }) {
   return (
     <svg
-      width="180"
-      height="90"
-      viewBox="0 0 220 110"
+      width="220"
+      height="78"
+      viewBox="0 0 380 134"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Renew Pelvic Activation Clinic"
     >
-      {/* Decorative oval ring */}
-      <ellipse
-        cx="110"
-        cy="55"
-        rx="95"
-        ry="40"
+      {/* Butterfly emblem: two thin overlapping ellipses */}
+      <g
+        transform="translate(48 48)"
         fill="none"
         stroke={color}
-        strokeWidth="1.2"
-      />
-      {/* Renew wordmark */}
-      <text
-        x="110"
-        y="50"
-        textAnchor="middle"
-        fontFamily="'Cormorant Garamond', Georgia, serif"
-        fontSize="30"
-        fontWeight="500"
-        fontStyle="italic"
-        fill={color}
-        letterSpacing="1"
+        strokeWidth="2"
       >
-        Renew
+        <ellipse cx="0" cy="0" rx="30" ry="9" transform="rotate(-32)" />
+        <ellipse cx="0" cy="0" rx="30" ry="9" transform="rotate(32)" />
+      </g>
+
+      {/* RENEW wordmark */}
+      <text
+        x="100"
+        y="62"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontSize="50"
+        fontWeight="700"
+        fill={color}
+        letterSpacing="2"
+      >
+        RENEW
       </text>
+
       {/* Tagline */}
       <text
-        x="110"
-        y="74"
-        textAnchor="middle"
-        fontFamily="'Montserrat', sans-serif"
-        fontSize="7"
+        x="102"
+        y="88"
+        fontFamily="'Montserrat', 'Helvetica Neue', sans-serif"
+        fontSize="12"
         fontWeight="500"
-        letterSpacing="2.5"
         fill={color}
+        letterSpacing="3.4"
       >
         PELVIC ACTIVATION CLINIC
       </text>
-      {/* small decorative dots */}
-      <circle cx="22" cy="55" r="2" fill={color} />
-      <circle cx="198" cy="55" r="2" fill={color} />
+
+      {/* Sweeping U-curve beneath */}
+      <path
+        d="M 18 60 Q 185 180 355 60"
+        fill="none"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   )
 }
