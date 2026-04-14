@@ -1,6 +1,7 @@
 import PageHeader from '../components/PageHeader.jsx'
 import TreatmentPlans from '../components/TreatmentPlans.jsx'
 import HifemIntro from '../components/HifemIntro.jsx'
+import treatmentHero from '../assets/treatment.png'
 
 export default function Treatment() {
   return (
@@ -8,7 +9,7 @@ export default function Treatment() {
       <PageHeader
         title="Treatment"
         subtitle="HIFEM pelvic floor therapy"
-        image="https://images.unsplash.com/photo-1571772805064-207c8435df79?auto=format&fit=crop&w=2000&q=80"
+        image={treatmentHero}
       />
       <HifemIntro />
       <TreatmentPlans />
