@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import renewPacProvides from '../assets/renew-pac-provides.jpg'
 import './HifemIntro.css'
 
 export default function HifemIntro() {
@@ -14,8 +15,8 @@ export default function HifemIntro() {
           transition={{ duration: 0.9 }}
         >
           <img
-            src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=1200&q=80"
-            alt="Active woman enjoying life after HIFEM pelvic floor treatment"
+            src={renewPacProvides}
+            alt="Renew PAC pelvic floor therapy and HIFEM treatment services"
             loading="lazy"
           />
         </motion.div>
