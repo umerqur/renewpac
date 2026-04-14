@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import Logo from './Logo.jsx'
+import { PhoneIcon } from './Icons.jsx'
+import { trackPhoneCall } from '../utils/tracking.js'
 import './Header.css'
 
+// Simplified primary nav for paid-traffic landing experience.
+// Home / About Us / Research are intentionally removed to reduce navigation
+// leakage from Google Ads visitors. Those pages still exist and are reachable
+// from the footer.
 const NAV = [
-  { to: '/', label: 'Home' },
   { to: '/candidate', label: 'Am I a Candidate' },
   { to: '/treatment', label: 'Treatment' },
-  { to: '/about', label: 'About Us' },
-  { to: '/research', label: 'Research' },
   { to: '/faq', label: 'FAQ' },
-  { to: '/contact', label: 'Contact Us' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Header() {
@@ -36,6 +39,16 @@ export default function Header() {
           <Logo />
         </Link>
 
+        {/* Tap-to-call button shown on mobile next to the burger. */}
+        <a
+          href="tel:+19052018005"
+          className="header-phone-mobile"
+          aria-label="Call Renew PAC at (905) 201-8005"
+          onClick={() => trackPhoneCall('header-mobile')}
+        >
+          <PhoneIcon color="#1f3a5f" />
+        </a>
+
         <button
           className={`burger ${mobileOpen ? 'open' : ''}`}
           aria-label="Toggle menu"
@@ -53,13 +66,23 @@ export default function Header() {
               <li key={item.to}>
                 <NavLink
                   to={item.to}
-                  end={item.to === '/'}
                   className={({ isActive }) => (isActive ? 'active' : '')}
                 >
                   {item.label}
                 </NavLink>
               </li>
             ))}
+            <li className="header-phone-li">
+              <a
+                href="tel:+19052018005"
+                className="header-phone"
+                aria-label="Call Renew PAC at (905) 201-8005"
+                onClick={() => trackPhoneCall('header-desktop')}
+              >
+                <PhoneIcon color="currentColor" />
+                <span>(905)&nbsp;201-8005</span>
+              </a>
+            </li>
             <li className="cta-li">
               <Link to="/book" className="nav-cta">
                 Book an Appointment

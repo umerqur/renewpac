@@ -1,7 +1,56 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { PhoneIcon, MailIcon, LocationIcon } from '../components/Icons.jsx'
+import { trackPhoneCall, trackLeadSubmit } from '../utils/tracking.js'
+
+const FORM_NAME = 'contact'
+
+const encode = data =>
+  Object.keys(data)
+    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k] ?? ''))
+    .join('&')
 
 export default function Contact() {
+  const navigate = useNavigate()
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState(null)
+  const [values, setValues] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    'bot-field': '',
+  })
+
+  const onChange = e =>
+    setValues(v => ({ ...v, [e.target.name]: e.target.value }))
+
+  const onSubmit = async e => {
+    e.preventDefault()
+    if (submitting) return
+    setSubmitting(true)
+    setError(null)
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': FORM_NAME, ...values }),
+      })
+      if (!res.ok) throw new Error(`Request failed (${res.status})`)
+
+      trackLeadSubmit('contact')
+      navigate('/thank-you?source=contact')
+    } catch (err) {
+      console.error('Contact form submission failed:', err)
+      setError(
+        "Sorry — we couldn't send your message. Please try again, or call us at (905) 201-8005."
+      )
+      setSubmitting(false)
+    }
+  }
+
   return (
     <>
       <PageHeader
@@ -32,7 +81,13 @@ export default function Contact() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginTop: 26 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                   <span className="contact-ico"><PhoneIcon color="#fff" /></span>
-                  <a href="tel:+19052018005" style={{ color: 'var(--navy)', fontSize: 17, fontWeight: 500 }}>(905) 201-8005</a>
+                  <a
+                    href="tel:+19052018005"
+                    onClick={() => trackPhoneCall('contact-page')}
+                    style={{ color: 'var(--navy)', fontSize: 17, fontWeight: 500 }}
+                  >
+                    (905) 201-8005
+                  </a>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                   <span className="contact-ico"><MailIcon color="#fff" /></span>
@@ -47,28 +102,86 @@ export default function Contact() {
 
             <form
               className="contact-form"
-              onSubmit={e => {
-                e.preventDefault()
-                alert("Thank you! We'll be in touch shortly.")
-              }}
+              name={FORM_NAME}
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={onSubmit}
             >
+              <input type="hidden" name="form-name" value={FORM_NAME} />
+              <p style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+                <label>
+                  Don't fill this out if you're human:{' '}
+                  <input
+                    name="bot-field"
+                    tabIndex="-1"
+                    autoComplete="off"
+                    value={values['bot-field']}
+                    onChange={onChange}
+                  />
+                </label>
+              </p>
+
               <label>
                 <span>Name</span>
-                <input type="text" required />
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={values.name}
+                  onChange={onChange}
+                  autoComplete="name"
+                />
               </label>
               <label>
                 <span>Email</span>
-                <input type="email" required />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={values.email}
+                  onChange={onChange}
+                  autoComplete="email"
+                />
               </label>
               <label>
                 <span>Phone</span>
-                <input type="tel" />
+                <input
+                  type="tel"
+                  name="phone"
+                  value={values.phone}
+                  onChange={onChange}
+                  autoComplete="tel"
+                />
               </label>
               <label>
                 <span>Message</span>
-                <textarea rows={5} required />
+                <textarea
+                  name="message"
+                  rows={5}
+                  required
+                  value={values.message}
+                  onChange={onChange}
+                />
               </label>
-              <button type="submit" className="btn">Send Message</button>
+              {error && (
+                <div
+                  role="alert"
+                  style={{
+                    padding: '12px 16px',
+                    background: '#fdecec',
+                    border: '1px solid #e8b4b4',
+                    color: '#8a2222',
+                    borderRadius: 2,
+                    fontSize: 14,
+                  }}
+                >
+                  {error}
+                </div>
+              )}
+              <button type="submit" className="btn" disabled={submitting}>
+                {submitting ? 'Sending…' : 'Send Message'}
+              </button>
             </form>
           </div>
         </div>

@@ -76,6 +76,38 @@
   color: var(--accent);
 }
 
+/* Desktop phone number — prominent click-to-call for conversion tracking. */
+.header-phone-li {
+  margin-left: 6px;
+}
+
+.header-phone {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px !important;
+  color: var(--navy) !important;
+  font-size: 14px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  font-family: var(--font-sans);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.header-phone::after {
+  display: none;
+}
+
+.header-phone:hover {
+  color: var(--accent) !important;
+}
+
+.header-phone svg {
+  flex-shrink: 0;
+}
+
 .nav-cta {
   background: var(--accent);
   color: #fff !important;
@@ -98,6 +130,19 @@
 
 .cta-li {
   margin-left: 10px;
+}
+
+/* Mobile-only tap-to-call icon next to the burger. */
+.header-phone-mobile {
+  display: none;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  margin-left: auto;
 }
 
 .burger {
@@ -127,6 +172,7 @@
 
 @media (max-width: 1100px) {
   .burger { display: flex; }
+  .header-phone-mobile { display: inline-flex; }
   .primary-nav {
     position: fixed;
     top: 100%;
@@ -151,12 +197,19 @@
     border-bottom: 1px solid var(--line);
   }
   .primary-nav a::after { display: none; }
+  .header-phone-li { margin: 0; }
+  .header-phone {
+    border-left: none !important;
+    border-right: none !important;
+    justify-content: flex-start;
+  }
   .cta-li { margin: 16px 28px 0; }
   .nav-cta { display: block; text-align: center; }
 }
 
 @media (max-width: 600px) {
-  .header-inner { padding: 6px 18px; }
+  .header-inner { padding: 6px 18px; gap: 10px; }
+  .header-phone-mobile { width: 38px; height: 38px; }
 }
 
 /* Offset for fixed header */
