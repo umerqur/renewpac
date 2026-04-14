@@ -1,9 +1,0 @@
-2021-11-03T14:03:53+00:00 CRITICAL Uncaught Error: Call to a member function update_meta() on bool in /usr/home/insvqs3/public_html/renewpac.pairsite.com/wp-content/plugins/elementor-pro/modules/theme-builder/classes/conditions-manager.php:286
-Stack trace:
-#0 /usr/home/insvqs3/public_html/renewpac.pairsite.com/wp-content/plugins/elementor-pro/modules/theme-builder/classes/conditions-manager.php(167): ElementorPro\Modules\ThemeBuilder\Classes\Conditions_Manager->save_conditions()
-#1 [internal function]: ElementorPro\Modules\ThemeBuilder\Classes\Conditions_Manager->ajax_save_theme_template_conditions()
-#2 /usr/home/insvqs3/public_html/renewpac.pairsite.com/wp-content/plugins/elementor/core/common/modules/ajax/module.php(171): call_user_func()
-#3 /usr/home/insvqs3/public_html/renewpac.pairsite.com/wp-includes/class-wp-hook.php(303): Elementor\Core\Common\Modules\Ajax\Module->handle_ajax_request()
-#4 /usr/home/insvqs3/public_html/renewpac.pairsite.com/wp-includes/class-wp-hook.php(327): WP_Hook->apply_filters()
-#5 /usr/home/insvqs3/public_html/ren in /usr/home/insvqs3/public_html/renewpac.pairsite.com/wp-content/plugins/elementor-pro/modules/theme-builder/classes/conditions-manager.php on line 286
-
