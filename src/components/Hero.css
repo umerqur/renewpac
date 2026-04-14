@@ -17,6 +17,12 @@
   animation: slowZoom 20s ease-in-out infinite alternate;
 }
 
+@media (min-width: 901px) {
+  .hero-bg {
+    background-position: center 20%;
+  }
+}
+
 @keyframes slowZoom {
   from { transform: scale(1.05); }
   to   { transform: scale(1.15); }
@@ -58,34 +64,6 @@
   font-weight: 400;
 }
 
-.hero-scroll {
-  position: absolute;
-  bottom: -200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-
-.hero-scroll-line {
-  display: block;
-  width: 1px;
-  height: 50px;
-  background: #fff;
-  animation: scrollPulse 2s ease-in-out infinite;
-  transform-origin: top center;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { transform: scaleY(0.3); }
-  50%      { transform: scaleY(1); }
-}
-
 @media (max-width: 900px) {
   .hero { min-height: 70vh; }
-  .hero-scroll { display: none; }
 }
