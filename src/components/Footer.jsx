@@ -39,11 +39,11 @@ export default function Footer() {
             </li>
             <li>
               <MailIcon />
-              <a href="mailto:info@renewpac.ca">info@renewpac.ca</a>
+              <a href="mailto:info@sherlaseclinic.com">info@sherlaseclinic.com</a>
             </li>
             <li>
               <LocationIcon />
-              <span>Ontario, Canada</span>
+              <span>383 Main Street Markham N #7, Markham, ON L3P 1Z3</span>
             </li>
           </ul>
         </div>

@@ -91,11 +91,11 @@ export default function Contact() {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                   <span className="contact-ico"><MailIcon color="#fff" /></span>
-                  <a href="mailto:info@renewpac.ca" style={{ color: 'var(--navy)', fontSize: 17, fontWeight: 500 }}>info@renewpac.ca</a>
+                  <a href="mailto:info@sherlaseclinic.com" style={{ color: 'var(--navy)', fontSize: 17, fontWeight: 500 }}>info@sherlaseclinic.com</a>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                   <span className="contact-ico"><LocationIcon color="#fff" /></span>
-                  <span style={{ color: 'var(--navy)', fontSize: 17, fontWeight: 500 }}>Ontario, Canada</span>
+                  <span style={{ color: 'var(--navy)', fontSize: 17, fontWeight: 500 }}>383 Main Street Markham N #7, Markham, ON L3P 1Z3</span>
                 </div>
               </div>
             </div>

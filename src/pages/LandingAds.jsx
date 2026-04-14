@@ -272,7 +272,7 @@ export default function LandingAds() {
             rights reserved.
           </p>
           <p>
-            Ontario, Canada ·{' '}
+            383 Main Street Markham N #7, Markham, ON L3P 1Z3 ·{' '}
             <a
               href="tel:+19052018005"
               onClick={() => trackPhoneCall('lp-footer')}
