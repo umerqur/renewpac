@@ -2,24 +2,29 @@ import PageHeader from '../components/PageHeader.jsx'
 
 const studies = [
   {
-    title: 'HIFEM for Stress Urinary Incontinence',
+    title: 'Pelvic Floor Muscle Training for Stress Urinary Incontinence',
     summary:
-      'Multiple peer-reviewed studies show significant improvement in urinary leakage symptoms after a course of HIFEM treatments, with the majority of participants reporting reduced pad use within weeks.',
+      'Pelvic floor muscle training is studied in the clinical literature as a conservative approach for stress urinary incontinence. HIFEM treatments are designed to elicit repeated pelvic floor muscle contractions during each session, engaging the same muscle groups that standard pelvic floor rehabilitation targets.',
+    sources: [
+      'Arzu Razak Ozdincler et al., Telemedicine and e-Health, 2025',
+    ],
   },
   {
-    title: 'Pelvic Floor Muscle Strengthening',
+    title: 'Post-partum Pelvic Floor Recovery',
     summary:
-      'HIFEM induces supramaximal contractions that strengthen and re-educate the pelvic floor beyond what voluntary exercises (such as kegels) can achieve.',
-  },
-  {
-    title: 'Post-partum Recovery',
-    summary:
-      'Clinical research supports HIFEM as a safe, effective adjunct for postpartum pelvic floor rehabilitation, helping new mothers return to activity with confidence.',
+      'Pelvic floor rehabilitation after childbirth has been examined in clinical research as part of postpartum recovery, with structured pelvic floor training studied for its potential role in helping new mothers regain pelvic floor function.',
+    sources: [
+      'Zhijing Sun et al., Zhonghua Fu Chan Ke Za Zhi, 2015',
+    ],
   },
   {
     title: 'Post-prostatectomy Continence',
     summary:
-      'Emerging studies indicate that HIFEM improves continence and quality of life in men recovering from prostate surgery.',
+      'Continence recovery after prostate surgery is an area of ongoing clinical research, with studies investigating pelvic floor rehabilitation and related conservative approaches for men recovering from prostatectomy.',
+    sources: [
+      'Halil Tosun et al., Therapeutics and Clinical Risk Management, 2025',
+      'Alexander Canning et al., World Journal of Urology, 2022',
+    ],
   },
 ]
 
@@ -53,7 +58,28 @@ export default function Research() {
                 }}
               >
                 <h3 style={{ margin: '0 0 8px' }}>{s.title}</h3>
-                <p style={{ margin: 0, color: '#444' }}>{s.summary}</p>
+                <p style={{ margin: '0 0 16px', color: '#444' }}>{s.summary}</p>
+                <div
+                  style={{
+                    borderTop: '1px solid rgba(31, 58, 95, 0.12)',
+                    paddingTop: 12,
+                  }}
+                >
+                  {s.sources.map(src => (
+                    <p
+                      key={src}
+                      style={{
+                        margin: '2px 0',
+                        fontSize: 12,
+                        lineHeight: 1.55,
+                        color: 'var(--muted)',
+                        letterSpacing: '0.01em',
+                      }}
+                    >
+                      <span style={{ fontWeight: 500 }}>Source:</span> {src}
+                    </p>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
