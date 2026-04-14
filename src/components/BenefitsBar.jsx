@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { SuccessRateIcon, PelvisIcon, WalkingIcon, DressIcon } from './Icons.jsx'
+import iconSuccess from '../assets/icon-success.gif'
+import iconPelvic from '../assets/icon-pelvic.gif'
+import iconWalkIn from '../assets/icon-walk-in.gif'
+import iconDressed from '../assets/icon-dressed.gif'
 import './BenefitsBar.css'
 
 const benefits = [
-  { icon: SuccessRateIcon, label: '95% Success Rate' },
-  { icon: PelvisIcon, label: 'Treats The Entire\nPelvic Floor' },
-  { icon: WalkingIcon, label: 'Walk-in Walk-Out\nProcedure' },
-  { icon: DressIcon, label: 'Remain Fully\nClothed' },
+  { src: iconSuccess, alt: '95% success rate', label: '95% Success\nRate' },
+  { src: iconPelvic, alt: 'Treats the entire pelvic floor', label: 'Treats The Entire\nPelvic Floor' },
+  { src: iconWalkIn, alt: 'Walk-in, walk-out procedure', label: 'Walk-In, Walk-Out\nProcedure' },
+  { src: iconDressed, alt: 'Remain fully clothed', label: 'Remain Fully\nClothed' },
 ]
 
 export default function BenefitsBar() {
@@ -40,7 +43,7 @@ export default function BenefitsBar() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
-              <b.icon />
+              <img src={b.src} alt={b.alt} className="benefit-icon" loading="lazy" />
               <p>{b.label}</p>
             </motion.div>
           ))}

@@ -47,7 +47,8 @@
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 28px 16px;
+  align-items: start;
 }
 
 .benefit-item {
@@ -55,21 +56,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
-  padding: 10px;
+  justify-content: flex-start;
+  gap: 14px;
+  padding: 8px 4px;
 }
 
-.benefit-item svg {
+.benefit-icon {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  display: block;
   transition: transform 0.4s ease;
+  /* Slight lift so the GIFs read as one cohesive row */
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
 }
 
-.benefit-item:hover svg {
-  transform: translateY(-6px) scale(1.05);
+.benefit-item:hover .benefit-icon {
+  transform: translateY(-4px) scale(1.04);
 }
 
 .benefit-item p {
   color: #fff;
   margin: 0;
+  min-height: 2.8em; /* reserve 2 lines so all labels align vertically */
   font-size: 14px;
   letter-spacing: 0.5px;
   line-height: 1.4;
@@ -84,8 +93,11 @@
     text-align: center;
   }
   .benefits-left { text-align: center; }
+  .benefit-icon { width: 96px; height: 96px; }
 }
 
 @media (max-width: 700px) {
-  .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 20px; }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 16px; }
+  .benefit-icon { width: 88px; height: 88px; }
+  .benefit-item p { min-height: 0; }
 }
