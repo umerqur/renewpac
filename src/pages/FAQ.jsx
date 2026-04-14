@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PageHeader from '../components/PageHeader.jsx'
 import { ChevronDown } from '../components/Icons.jsx'
+import faqHero from '../assets/FAQ.png'
 
 const faqs = [
   {
@@ -56,7 +57,7 @@ export default function FAQ() {
       <PageHeader
         title="FAQ"
         subtitle="Frequently asked questions"
-        image="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=2000&q=80"
+        image={faqHero}
       />
       <section className="section">
         <div className="container" style={{ maxWidth: 820 }}>
