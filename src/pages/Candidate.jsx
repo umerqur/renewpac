@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { SquareBullet } from '../components/Icons.jsx'
 import CandidateSection from '../components/CandidateSection.jsx'
+import candidateHero from '../assets/runningyoungoldjpg.jpg'
 
 export default function Candidate() {
   return (
@@ -9,7 +10,7 @@ export default function Candidate() {
       <PageHeader
         title="Am I a Candidate"
         subtitle="Is HIFEM right for me?"
-        image="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=2000&q=80"
+        image={candidateHero}
       />
 
       <section className="section">
