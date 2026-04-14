@@ -1,0 +1,35 @@
+/* Shared sizing for the Renew PAC logo image so the header, footer, and
+   landing-page layouts all render the mark consistently. Height-based sizing
+   keeps the aspect ratio locked while letting the width flow naturally. */
+
+.site-logo {
+  display: block;
+  height: 60px;
+  width: auto;
+  max-width: 100%;
+  user-select: none;
+}
+
+/* Dark-background variant — used in the footer where the navy wordmark would
+   otherwise disappear against the dark navy background. `brightness(0)` first
+   flattens every pixel to black, then `invert(1)` flips it to pure white,
+   preserving the mark's transparency. */
+.site-logo--invert {
+  filter: brightness(0) invert(1);
+}
+
+/* Slightly tighter sizing in the footer so the logo sits comfortably above
+   the tagline copy. */
+.footer-logo .site-logo {
+  height: 56px;
+}
+
+/* Responsive trim for narrower viewports. */
+@media (max-width: 600px) {
+  .site-logo {
+    height: 46px;
+  }
+  .footer-logo .site-logo {
+    height: 50px;
+  }
+}
