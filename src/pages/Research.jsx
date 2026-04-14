@@ -1,4 +1,5 @@
 import PageHeader from '../components/PageHeader.jsx'
+import researchHero from '../assets/Research.png'
 
 const studies = [
   {
@@ -34,7 +35,7 @@ export default function Research() {
       <PageHeader
         title="Research"
         subtitle="The science behind HIFEM"
-        image="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=2000&q=80"
+        image={researchHero}
       />
       <section className="section">
         <div className="container" style={{ maxWidth: 900 }}>
