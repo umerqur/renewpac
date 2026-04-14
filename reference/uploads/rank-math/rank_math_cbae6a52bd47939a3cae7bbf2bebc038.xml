@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//renewpac.ca/main-sitemap.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://renewpac.ca/post-sitemap.xml</loc>
+		<lastmod>2020-10-15T19:04:50+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://renewpac.ca/page-sitemap.xml</loc>
+		<lastmod>2026-04-10T19:40:06+00:00</lastmod>
+	</sitemap>
+	<sitemap>
+		<loc>https://renewpac.ca/category-sitemap.xml</loc>
+		<lastmod>2020-10-15T19:04:50+00:00</lastmod>
+	</sitemap>
+</sitemapindex>

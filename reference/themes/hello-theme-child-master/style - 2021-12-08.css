@@ -1,0 +1,66 @@
+/*
+Theme Name: Hello Elementor Child
+Theme URI: https://github.com/elementor/hello-theme/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 1.0.1
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+/*
+    Add your custom styles here
+*/
+
+/* HEADER */
+#header-bar {
+  transition: all 700ms;
+}
+#header-bar .header-logo {
+  display:none;
+}
+
+#header-bar.header-bar-scrolled {
+  background-color:#fff;
+  box-shadow: 1px 1px 10px #e8e8e8;
+  transition: all 700ms;
+}
+#header-bar.header-bar-scrolled .header-logo-white {
+  display:none;
+}
+#header-bar.header-bar-scrolled .header-logo {
+  display:block;
+}
+
+#header-bar.header-bar-scrolled a {
+  color:#54595F;
+}
+#header-bar.header-bar-scrolled a:hover {
+  color:#21395C;
+}
+
+#header-bar.header-bar-scrolled a.elementor-item:hover:after {
+    background-color: #21395C !important;
+}
+
+/* Button */
+.btn-blue a, a.btn-blue {
+  color:#fff !important;
+  background-color: #21395C !important;
+  font-weight: 600 !important;
+  padding: 16px 32px !important;
+  text-align:center !important;
+}
+.btn-blue a:hover, a.btn-blue:hover {
+  background-color: #091e3e !important;
+}
+
+
+/* GRAVITY FORMS TEAKS */
+.gform_footer input[type=submit] {
+  border:none !important;
+}

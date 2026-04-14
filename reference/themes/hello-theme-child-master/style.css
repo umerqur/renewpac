@@ -1,0 +1,188 @@
+/*
+Theme Name: Hello Elementor Child
+Theme URI: https://github.com/elementor/hello-theme/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 1.0.1
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+/*
+    Add your custom styles here
+*/
+
+ul {
+  list-style:square;
+}
+
+/* HEADER */
+#header-bar {
+  transition: all 400ms;
+}
+#header-bar .header-logo {
+  display:none;
+}
+
+#header-bar.header-bar-scrolled {
+  background-color:#fff;
+  box-shadow: 1px 1px 10px #e8e8e8;
+  transition: all 400ms;
+}
+#header-bar.header-bar-scrolled .header-logo-white {
+  display:none;
+}
+#header-bar.header-bar-scrolled .header-logo {
+  display:block;
+}
+
+#header-bar.header-bar-scrolled a {
+  color:#54595F;
+}
+#header-bar.header-bar-scrolled a:hover {
+  color:#21395C;
+}
+
+#header-bar.header-bar-scrolled a.elementor-item:hover:after {
+    background-color: #21395C !important;
+}
+
+/* Button */
+.btn-blue a, a.btn-blue {
+  color:#fff !important;
+  background-color: #21395C !important;
+  font-weight: 600 !important;
+  padding: 16px 32px !important;
+  text-align:center !important;
+}
+.btn-blue a:hover, a.btn-blue:hover {
+  background-color: #091e3e !important;
+}
+
+
+/* GRAVITY FORMS TEAKS */
+.gform_footer input[type=submit] {
+  border:none !important;
+}
+
+
+/* PRICING TABLE */
+.pricing-table {
+  font-size:16px;
+  display:flex;
+  flex-wrap:wrap;
+  padding-top:32px;
+  color:#545454;
+  justify-content:center;
+}
+
+.pricing-table div.table-col {
+  background-color:#eaeaea;
+  border-right:4px solid #fff;
+  width:100%;
+  min-width:260px;
+  margin-bottom:32px;
+}
+.pricing-table div.table-col.col-1 {
+  display:none;
+}
+.pricing-table div.table-col.col-2, .pricing-table div.table-col.col-3 {
+  text-align: center;
+}
+
+@media (min-width:1024px) {
+  .pricing-table div.table-col.col-1 {
+    display:block;
+    width:430px;
+    text-align:left;
+  }
+  .pricing-table div.table-col.col-2 {
+     width:150px;
+
+  }
+  .pricing-table div.table-col.col-3 {
+     width:150px;
+  }
+
+}
+
+.pricing-table div.table-col div{
+  padding:12px 16px;
+}
+
+.pricing-table div > div:nth-child(even) {
+  background-color:#dfdfdf;
+}
+
+.pricing-table .table-header {
+  position:relative;
+  height:80px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-end;
+  justify-content:center;
+  font-size:14px;
+}
+.pricing-table .table-header span {
+  display:block;
+  width:90%;
+  text-align:center;
+}
+.pricing-table .table-header.big {
+  justify-content: left;
+  font-size: 27px;
+  color: #1e365a;
+  font-weight: 600;
+}
+.pricing-table .table-header span.big {
+  padding-top:16px;
+  text-align:center;
+  display:block;
+  width:100%;
+  font-size:22px;
+  color:#1e365a;
+  font-weight: 600;
+}
+
+.pricing-table .blue-header {
+  font-size:14px;
+  background-color:#1d3559;
+  color:#fff;
+  padding:8px 16px ;
+  text-align:center;
+  position:absolute;
+  top:-41px;
+  left:50%;
+  width:180px;
+  transform:translate(-50%, 0);
+  z-index:10;
+}
+
+.pricing-table .blue-header:after {
+    content: "";
+    width:24px;
+    height:24px;
+    background: #1d355b;
+	  -ms-transform:rotate(45deg); /* IE 9 */
+	  -webkit-transform:rotate(45deg); /* Safari and Chrome */
+	  transform:rotate(45deg);
+    position:absolute;
+    bottom:-12px;
+    left: 50%;
+    margin-left: -12px;
+    z-index:-1;
+}
+
+@media (max-width:1024px) {
+  .pricing-table div.content:before {
+    content: attr(data-th)": ";
+    font-weight: bold;
+    display: block;
+    text-align:center;
+    padding-right:4px;
+  }
+}
