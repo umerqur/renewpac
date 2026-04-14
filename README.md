@@ -28,8 +28,10 @@ npm run preview  # preview production build
 - `/about` About Us
 - `/research` Research
 - `/faq` FAQ
-- `/contact` Contact
-- `/book` Book an Appointment
+- `/contact` Book an Appointment (primary booking / lead capture page —
+  phone, email, address, and Netlify form with thank-you redirect)
+- `/book` Permanent redirect → `/contact` (kept so existing ad creatives
+  and internal CTAs continue to work)
 
 ## Clinic contact
 

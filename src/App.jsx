@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
@@ -8,7 +8,6 @@ import About from './pages/About.jsx'
 import Research from './pages/Research.jsx'
 import FAQ from './pages/FAQ.jsx'
 import Contact from './pages/Contact.jsx'
-import Book from './pages/Book.jsx'
 import ThankYou from './pages/ThankYou.jsx'
 import LandingAds from './pages/LandingAds.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
@@ -44,7 +43,10 @@ export default function App() {
           <Route path="/research" element={<Research />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/book" element={<Book />} />
+          {/* /book is kept as a permanent alias so existing inbound links,
+              ad creatives, and internal CTAs continue to work. The Contact
+              page is now the primary booking / lead capture page. */}
+          <Route path="/book" element={<Navigate to="/contact" replace />} />
           <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </main>
