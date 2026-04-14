@@ -6,14 +6,16 @@ import { trackPhoneCall } from '../utils/tracking.js'
 import './Header.css'
 
 // Simplified primary nav for paid-traffic landing experience.
-// Home / About Us / Research are intentionally removed to reduce navigation
-// leakage from Google Ads visitors. Those pages still exist and are reachable
-// from the footer.
+// Home / About Us are intentionally kept out of the top nav to reduce
+// navigation leakage from Google Ads visitors; those pages still exist and
+// are reachable from the footer. "Contact" is also omitted because the
+// header CTA ("Book an Appointment") now routes users to /contact, which
+// serves as the primary booking / lead capture page.
 const NAV = [
   { to: '/candidate', label: 'Am I a Candidate' },
   { to: '/treatment', label: 'Treatment' },
+  { to: '/research', label: 'Research' },
   { to: '/faq', label: 'FAQ' },
-  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Header() {
@@ -84,7 +86,7 @@ export default function Header() {
               </a>
             </li>
             <li className="cta-li">
-              <Link to="/book" className="nav-cta">
+              <Link to="/contact" className="nav-cta">
                 Book an Appointment
               </Link>
             </li>

@@ -45,7 +45,7 @@ export default function Contact() {
     } catch (err) {
       console.error('Contact form submission failed:', err)
       setError(
-        "Sorry — we couldn't send your message. Please try again, or call us at (905) 201-8005."
+        "Sorry — we couldn't submit your request. Please try again, or call us directly at (905) 201-8005."
       )
       setSubmitting(false)
     }
@@ -54,8 +54,8 @@ export default function Contact() {
   return (
     <>
       <PageHeader
-        title="Contact Us"
-        subtitle="We'd love to hear from you"
+        title="Book an Appointment"
+        subtitle="Your first step toward confidence"
         image="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=2000&q=80"
       />
       <section className="section">
@@ -70,13 +70,14 @@ export default function Contact() {
             className="contact-grid"
           >
             <div>
-              <span className="eyebrow">Get in touch</span>
-              <h2>Questions? We're here for you.</h2>
+              <span className="eyebrow">Let's get started</span>
+              <h2>Book your complimentary consultation.</h2>
               <div className="divider" />
               <p>
-                Call us during business hours or send us a message and we'll get
-                back to you as soon as possible. A friendly team member will walk
-                you through the next steps.
+                Call us during business hours or request a callback using the
+                form and we'll reach out within one business day to confirm
+                your visit. A friendly team member will walk you through
+                availability, pricing, and what to expect.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginTop: 26 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
@@ -155,7 +156,7 @@ export default function Contact() {
                 />
               </label>
               <label>
-                <span>Message</span>
+                <span>How can we help?</span>
                 <textarea
                   name="message"
                   rows={5}
@@ -180,7 +181,7 @@ export default function Contact() {
                 </div>
               )}
               <button type="submit" className="btn" disabled={submitting}>
-                {submitting ? 'Sending…' : 'Send Message'}
+                {submitting ? 'Sending…' : 'Request My Appointment'}
               </button>
             </form>
           </div>
