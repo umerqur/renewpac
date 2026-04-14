@@ -14,15 +14,6 @@ export default function Hero() {
         >
           Take control of <span className="italic underline">your</span> body
         </motion.h1>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
-          className="hero-scroll"
-        >
-          <span className="hero-scroll-line" />
-          <span>Scroll</span>
-        </motion.div>
       </div>
     </section>
   )
