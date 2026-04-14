@@ -16,7 +16,7 @@ export default function HifemIntro() {
         >
           <img
             src={renewPacProvides}
-            alt="Renew PAC pelvic floor therapy and HIFEM treatment services"
+            alt="Confident older woman jogging outdoors in a sunlit park — active, healthy and strong"
             loading="lazy"
           />
         </motion.div>
