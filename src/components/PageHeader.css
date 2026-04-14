@@ -1,0 +1,43 @@
+.page-header {
+  position: relative;
+  padding: 140px 0 120px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-header-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: slowZoom 22s ease-in-out infinite alternate;
+}
+
+.page-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 33, 55, 0.6), rgba(15, 33, 55, 0.75));
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+}
+
+.page-header h1 {
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+.page-header p {
+  color: #e6ebf2;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
