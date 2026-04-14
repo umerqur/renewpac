@@ -1,0 +1,65 @@
+.hifem-intro {
+  background: #fff;
+}
+
+.hifem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.hifem-image {
+  position: relative;
+}
+
+.hifem-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: var(--shadow-card);
+}
+
+.hifem-image::after {
+  content: '';
+  position: absolute;
+  left: -20px;
+  bottom: -20px;
+  width: 120px;
+  height: 120px;
+  border: 3px solid var(--navy);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.hifem-text h2 em {
+  font-style: italic;
+}
+
+.sub-q {
+  color: var(--navy);
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.hifem-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.btn-ghost {
+  background: var(--navy);
+}
+
+.btn-ghost:hover {
+  background: var(--accent);
+}
+
+@media (max-width: 950px) {
+  .hifem-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hifem-image img { aspect-ratio: 16 / 10; }
+}

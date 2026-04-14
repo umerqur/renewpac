@@ -1,0 +1,125 @@
+.plans {
+  position: relative;
+  padding: 110px 0 120px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.plans-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  transform: scale(1.05);
+}
+
+.plans-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 33, 55, 0.65),
+    rgba(15, 33, 55, 0.75)
+  );
+}
+
+.plans-inner {
+  position: relative;
+  text-align: center;
+}
+
+.plans h2 {
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.plans-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 4px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.plans-table {
+  display: table;
+  width: 100%;
+}
+
+.plans-row {
+  display: table-row;
+}
+
+.plans-cell {
+  display: table-cell;
+  padding: 20px 24px;
+  color: #333;
+  vertical-align: middle;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: left;
+  font-size: 15px;
+}
+
+.plans-row:last-child .plans-cell { border-bottom: none; }
+
+.plans-head .plans-cell {
+  background: rgba(31, 58, 95, 0.04);
+  padding: 24px 24px 22px;
+}
+
+.plan-label { width: 42%; font-weight: 500; color: var(--navy); }
+.plan-col { width: 29%; text-align: center; }
+
+.plan-col small {
+  display: block;
+  font-weight: 400;
+  color: #666;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: none;
+  margin-top: 6px;
+}
+
+.plans-head .plan-col strong {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.plans-head .plan-label strong {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.plans-cell.center { text-align: center; }
+
+.call-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 34px;
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  padding: 14px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.call-cta:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 750px) {
+  .plans-cell { padding: 14px 12px; font-size: 13px; }
+  .plans-head .plan-col strong { font-size: 16px; }
+  .plans-head .plan-label strong { font-size: 18px; }
+  .plan-label { width: 46%; }
+  .call-cta { font-size: 16px; text-align: center; }
+}
