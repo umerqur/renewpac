@@ -1,21 +1,26 @@
-// Line-art icons matching the style of the original Renew PAC site
+// Line-art icons matching the elegant, thin-stroke medical illustration style
+// of the original Renew PAC site. All four benefit icons share a consistent
+// 1.6 stroke width, round line caps, and 100x100 viewBox for visual harmony.
 
 export function SuccessRateIcon({ size = 90, color = '#ffffff' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="44" fill="none" stroke={color} strokeWidth="2" />
+      {/* Faint base ring */}
+      <circle cx="50" cy="50" r="42" fill="none" stroke={color} strokeWidth="1.4" strokeOpacity="0.35" />
+      {/* 95% progress arc — leaves a small gap at the top */}
       <circle
         cx="50"
         cy="50"
-        r="44"
+        r="42"
         fill="none"
         stroke={color}
-        strokeWidth="3"
-        strokeDasharray="276.46"
-        strokeDashoffset="13.8"
+        strokeWidth="1.8"
+        strokeDasharray="263.89"
+        strokeDashoffset="13.2"
         strokeLinecap="round"
-        transform="rotate(-90 50 50)"
+        transform="rotate(-85 50 50)"
       />
+      {/* Centered 95% label */}
       <text
         x="50"
         y="56"
@@ -23,20 +28,10 @@ export function SuccessRateIcon({ size = 90, color = '#ffffff' }) {
         fill={color}
         fontFamily="'Montserrat', sans-serif"
         fontSize="18"
-        fontWeight="500"
+        fontWeight="600"
+        letterSpacing="0.5"
       >
-        95
-      </text>
-      <text
-        x="72"
-        y="50"
-        textAnchor="middle"
-        fill={color}
-        fontFamily="'Montserrat', sans-serif"
-        fontSize="10"
-        fontWeight="400"
-      >
-        %
+        95%
       </text>
     </svg>
   )
@@ -44,39 +39,97 @@ export function SuccessRateIcon({ size = 90, color = '#ffffff' }) {
 
 export function PelvisIcon({ size = 90, color = '#ffffff' }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      {/* Stylized pelvis line drawing */}
-      <path d="M20 40 C 22 28, 32 22, 42 26 C 46 28, 48 34, 50 40" />
-      <path d="M80 40 C 78 28, 68 22, 58 26 C 54 28, 52 34, 50 40" />
-      <path d="M22 42 C 20 52, 24 62, 34 68 C 42 72, 46 70, 50 64" />
-      <path d="M78 42 C 80 52, 76 62, 66 68 C 58 72, 54 70, 50 64" />
-      <path d="M50 40 L 50 64" />
-      <circle cx="30" cy="44" r="3" />
-      <circle cx="70" cy="44" r="3" />
-      <path d="M34 68 L 30 80" />
-      <path d="M66 68 L 70 80" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke={color}
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* Left iliac crest (hip wing) sweeping down into the ischium */}
+      <path d="M50 24 C 40 20, 28 20, 18 28 C 12 34, 10 46, 14 56 C 18 66, 28 72, 36 70 C 44 68, 48 60, 50 52" />
+      {/* Right iliac crest mirrored */}
+      <path d="M50 24 C 60 20, 72 20, 82 28 C 88 34, 90 46, 86 56 C 82 66, 72 72, 64 70 C 56 68, 52 60, 50 52" />
+      {/* Sacrum / pubic column connecting top and bottom centre */}
+      <path d="M50 24 L 50 52" />
+      {/* Left obturator foramen */}
+      <ellipse cx="30" cy="50" rx="7" ry="10" transform="rotate(-12 30 50)" />
+      {/* Right obturator foramen */}
+      <ellipse cx="70" cy="50" rx="7" ry="10" transform="rotate(12 70 50)" />
+      {/* Sacroiliac joint dots */}
+      <circle cx="43" cy="32" r="1.3" fill={color} stroke="none" />
+      <circle cx="57" cy="32" r="1.3" fill={color} stroke="none" />
+      <circle cx="44" cy="50" r="1.2" fill={color} stroke="none" />
+      <circle cx="56" cy="50" r="1.2" fill={color} stroke="none" />
+      {/* Lower ischial tips */}
+      <path d="M36 70 L 34 78" />
+      <path d="M64 70 L 66 78" />
     </svg>
   )
 }
 
 export function WalkingIcon({ size = 90, color = '#ffffff' }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="54" cy="18" r="6" />
-      <path d="M54 24 L 50 42 L 40 58" />
-      <path d="M50 42 L 62 50 L 58 66 L 50 82" />
-      <path d="M40 58 L 32 78" />
-      <path d="M50 36 L 62 34" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke={color}
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* Head */}
+      <circle cx="52" cy="16" r="6" />
+      {/* Torso */}
+      <path d="M52 22 L 50 46" />
+      {/* Forward-swinging arm */}
+      <path d="M50 30 L 62 40 L 60 52" />
+      {/* Back-swinging arm */}
+      <path d="M50 30 L 42 44" />
+      {/* Front leg (bent forward) */}
+      <path d="M50 46 L 58 64 L 58 84" />
+      {/* Back leg (extending back) */}
+      <path d="M50 46 L 42 66 L 36 84" />
     </svg>
   )
 }
 
 export function DressIcon({ size = 90, color = '#ffffff' }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M38 20 L 40 30 L 32 44 L 26 82 L 74 82 L 68 44 L 60 30 L 62 20" />
-      <path d="M38 20 Q 50 14, 62 20" />
-      <path d="M40 30 Q 50 36, 60 30" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke={color}
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* Left strap */}
+      <path d="M38 16 L 42 30" />
+      {/* Right strap */}
+      <path d="M62 16 L 58 30" />
+      {/* Sweetheart neckline */}
+      <path d="M42 30 Q 50 26, 58 30" />
+      {/* Bodice sides tapering to a natural waist */}
+      <path d="M42 30 L 40 46" />
+      <path d="M58 30 L 60 46" />
+      {/* Waistline */}
+      <path d="M40 46 Q 50 49, 60 46" />
+      {/* A-line skirt flaring out */}
+      <path d="M40 46 C 32 58, 26 72, 22 84" />
+      <path d="M60 46 C 68 58, 74 72, 78 84" />
+      {/* Hemline sweep */}
+      <path d="M22 84 Q 50 92, 78 84" />
     </svg>
   )
 }
