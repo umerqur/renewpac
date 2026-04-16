@@ -23,7 +23,7 @@ export function trackPhoneCall(source = 'unknown') {
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'conversion', {
       // Google Ads phone-call conversion. Update with your real send_to value.
-      send_to: 'AW-CONVERSION_ID/PHONE_LABEL',
+      send_to: 'AW-17719269754/PHONE_LABEL',
       value: 1.0,
       currency: 'CAD',
     })
@@ -46,7 +46,7 @@ export function trackLeadSubmit(source = 'book') {
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'conversion', {
       // Google Ads lead-form conversion. Update with your real send_to value.
-      send_to: 'AW-CONVERSION_ID/LEAD_LABEL',
+      send_to: 'AW-17719269754/LEAD_LABEL',
       value: 1.0,
       currency: 'CAD',
     })
