@@ -45,8 +45,7 @@ export function trackLeadSubmit(source = 'book') {
 
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'conversion', {
-      // Google Ads lead-form conversion. Update with your real send_to value.
-      send_to: 'AW-17719269754/LEAD_LABEL',
+      send_to: 'AW-17719269754/8mFHCKz4wp0cEPqymoFC',
       value: 1.0,
       currency: 'CAD',
     })
