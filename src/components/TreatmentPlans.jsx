@@ -63,7 +63,7 @@ export default function TreatmentPlans() {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <PhoneIcon color="#fff" />
-          Call (905) 201-8005 for pricing and insurance coverage details.
+          Call (905) 201-8005 for pricing. This treatment is not covered by extended health insurance.
         </motion.a>
       </div>
     </section>
