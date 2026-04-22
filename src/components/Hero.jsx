@@ -12,8 +12,25 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, ease: 'easeOut' }}
         >
-          Take control of <span className="italic underline">your</span> body
+          Take Control of <span className="italic underline">Your</span> Body
         </motion.h1>
+        <motion.p
+          className="hero-sub"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.25 }}
+        >
+          at <span className="hero-brand">Sherlase</span>
+        </motion.p>
+        <motion.div
+          className="hero-offer"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
+        >
+          <span className="hero-offer-price">First 6 Treatments $695</span>
+          <span className="hero-offer-meta">for a limited time</span>
+        </motion.div>
       </div>
     </section>
   )

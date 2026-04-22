@@ -109,15 +109,20 @@ export default function LandingAds() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="lp-eyebrow">Complimentary Consultation</span>
+              <span className="lp-eyebrow">Limited Time Offer at Sherlase</span>
               <h1>
                 End Urinary Leakage Without
                 <br />
                 <em>Surgery or Medication.</em>
               </h1>
+              <div className="lp-offer">
+                <span className="lp-offer-price">First 6 Treatments $695</span>
+                <span className="lp-offer-meta">for a limited time</span>
+              </div>
               <p className="lp-sub">
-                HIFEM pelvic floor therapy — a painless, 28-minute, fully-clothed
-                treatment with a 95% success rate. Walk in, walk out.
+                HIFEM pelvic floor therapy at Sherlase — a painless, 28-minute,
+                fully-clothed treatment with a 95% success rate. Walk in, walk
+                out.
               </p>
               <ul className="lp-reasons">
                 {reasons.map(r => (

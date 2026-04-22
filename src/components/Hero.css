@@ -64,6 +64,61 @@
   font-weight: 400;
 }
 
+.hero-sub {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.hero-sub .hero-brand {
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+.hero-offer {
+  margin-top: 36px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  backdrop-filter: blur(6px);
+  background: rgba(15, 33, 55, 0.18);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero-offer-price {
+  color: #fff;
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-offer-meta {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
 @media (max-width: 900px) {
   .hero { min-height: 70vh; }
+  .hero-offer {
+    margin-top: 28px;
+    padding: 14px 22px;
+  }
+  .hero-offer-meta { letter-spacing: 2px; }
+}
+
+@media (max-width: 480px) {
+  .hero-offer { padding: 12px 18px; }
+  .hero-offer-price { letter-spacing: 1.5px; }
 }
