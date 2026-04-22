@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
-import { CheckIcon, CrossIcon, PhoneIcon } from './Icons.jsx'
+import { CheckIcon, PhoneIcon } from './Icons.jsx'
 import './TreatmentPlans.css'
 
 const rows = [
-  { label: '28 minutes in duration', initial: true, follow: true },
-  { label: 'Fully clothed', initial: true, follow: true },
-  { label: 'HIFEM contracts your pelvic floor muscle', initial: true, follow: true },
-  { label: 'Painless and non-invasive', initial: true, follow: true },
-  { label: 'Treatment booked twice a week for 3 weeks', initial: true, follow: false },
-  { label: 'Follow up treatments recommended every 4 months', initial: false, follow: true },
+  '28 minutes in duration',
+  'Fully clothed',
+  'HIFEM contracts your pelvic floor muscle',
+  'Painless and non-invasive',
+  'Treatment booked twice a week for 3 weeks',
+  'Follow up consultation for progress results',
 ]
 
 export default function TreatmentPlans() {
@@ -39,23 +39,15 @@ export default function TreatmentPlans() {
                 <strong>Treatment Plan</strong>
               </div>
               <div className="plans-cell plan-col">
-                <strong>Initial Treatment</strong>
-                <small>Includes 6 HIFEM treatments</small>
-              </div>
-              <div className="plans-cell plan-col">
-                <strong>Follow Up Treatment</strong>
-                <small>Cost Per Treatment</small>
+                <strong>11,200 Kegels</strong>
               </div>
             </div>
 
-            {rows.map(r => (
-              <div className="plans-row" role="row" key={r.label}>
-                <div className="plans-cell plan-label">{r.label}</div>
+            {rows.map(label => (
+              <div className="plans-row" role="row" key={label}>
+                <div className="plans-cell plan-label">{label}</div>
                 <div className="plans-cell plan-col center">
-                  {r.initial ? <CheckIcon color="#2f6fb5" /> : <CrossIcon color="#b03a3a" />}
-                </div>
-                <div className="plans-cell plan-col center">
-                  {r.follow ? <CheckIcon color="#2f6fb5" /> : <CrossIcon color="#b03a3a" />}
+                  <CheckIcon color="#2f6fb5" />
                 </div>
               </div>
             ))}

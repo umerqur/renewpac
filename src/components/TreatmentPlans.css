@@ -68,8 +68,8 @@
   padding: 24px 24px 22px;
 }
 
-.plan-label { width: 42%; font-weight: 500; color: var(--navy); }
-.plan-col { width: 29%; text-align: center; }
+.plan-label { width: 60%; font-weight: 500; color: var(--navy); }
+.plan-col { width: 40%; text-align: center; }
 
 .plan-col small {
   display: block;
@@ -120,6 +120,7 @@
   .plans-cell { padding: 14px 12px; font-size: 13px; }
   .plans-head .plan-col strong { font-size: 16px; }
   .plans-head .plan-label strong { font-size: 18px; }
-  .plan-label { width: 46%; }
+  .plan-label { width: 62%; }
+  .plan-col { width: 38%; }
   .call-cta { font-size: 16px; text-align: center; }
 }
