@@ -74,10 +74,9 @@ export default function Contact() {
               <h2>Book your complimentary consultation.</h2>
               <div className="divider" />
               <p>
-                Call us during business hours or request a callback using the
-                form and we'll reach out within one business day to confirm
-                your visit. A friendly team member will walk you through
-                availability, pricing, and what to expect.
+                Call (905) 201-8005 to book your complimentary consultation
+                and trial - we don't provide receipts for extended health
+                coverage.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginTop: 26 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>

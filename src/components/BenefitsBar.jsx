@@ -25,7 +25,7 @@ export default function BenefitsBar() {
           transition={{ duration: 0.8 }}
         >
           <h2>
-            Strenghten your pelvic floor and
+            Strengthen your pelvic floor and
             <br />
             <em>reduce urinary frequency.</em>
           </h2>
