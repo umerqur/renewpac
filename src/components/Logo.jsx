@@ -1,14 +1,14 @@
-import logoPelvic from '../assets/logo_pelvic.png'
 import './Logo.css'
 
-// Renew Pelvic Activation Clinic logo. The source of truth is the PNG asset
-// at src/assets/logo_pelvic.png — rendered here with consistent sizing so the
-// header, footer, and landing-page layouts stay in sync.
+// Typographic co-branded lockup. "Renew" stays the primary wordmark (the
+// renewpac.ca domain) with "at Sherlase Clinic & Spa" sitting under it as
+// a subtle secondary line. Rendering the mark as text — rather than a bulky
+// PNG — keeps the header crisp at every viewport and lets us restyle it
+// with CSS instead of re-exporting image assets.
 //
-// When `color` is explicitly passed (e.g. "#ffffff" from the footer on the
-// dark navy background) we apply a CSS filter that forces the mark to white
-// for proper contrast. Otherwise the logo renders in its natural brand
-// navy/gray colors.
+// `color` forces a light treatment for dark backgrounds (footer navy). The
+// caller is responsible for wrapping the mark in a link when appropriate,
+// matching the previous Logo contract.
 export default function Logo({ color, className = '' }) {
   const invert = Boolean(color)
   const classes = ['site-logo', invert ? 'site-logo--invert' : '', className]
@@ -16,11 +16,16 @@ export default function Logo({ color, className = '' }) {
     .join(' ')
 
   return (
-    <img
-      src={logoPelvic}
-      alt="Renew Pelvic Activation Clinic"
+    <span
       className={classes}
-      draggable="false"
-    />
+      role="img"
+      aria-label="Renew at Sherlase Clinic & Spa"
+    >
+      <span className="site-logo__primary">Renew</span>
+      <span className="site-logo__secondary">
+        <span className="site-logo__at">at</span>
+        <span className="site-logo__partner">Sherlase Clinic &amp; Spa</span>
+      </span>
+    </span>
   )
 }

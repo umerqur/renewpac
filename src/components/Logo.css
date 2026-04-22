@@ -1,35 +1,132 @@
-/* Shared sizing for the Renew PAC logo image so the header, footer, and
-   landing-page layouts all render the mark consistently. Height-based sizing
-   keeps the aspect ratio locked while letting the width flow naturally. */
+/* Co-branded typographic lockup used in the header, footer, and landing-page
+   layouts. "Renew" is the primary serif wordmark; "at Sherlase Clinic & Spa"
+   reads as a smaller, refined secondary line. All sizing is em-based so the
+   mark scales cleanly with the parent font size on desktop and mobile. */
 
 .site-logo {
-  display: block;
-  height: 60px;
-  width: auto;
-  max-width: 100%;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+  color: var(--navy);
+  line-height: 1;
   user-select: none;
+  text-decoration: none;
+}
+
+.site-logo__primary {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 34px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.site-logo__secondary {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding-left: 14px;
+  border-left: 1px solid var(--line);
+  /* Nudge the secondary block so its baseline aligns tidily with the
+     primary serif cap-height rather than its descender. */
+  transform: translateY(-2px);
+}
+
+.site-logo__at {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.site-logo__partner {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: var(--navy);
+  white-space: nowrap;
 }
 
 /* Dark-background variant — used in the footer where the navy wordmark would
-   otherwise disappear against the dark navy background. `brightness(0)` first
-   flattens every pixel to black, then `invert(1)` flips it to pure white,
-   preserving the mark's transparency. */
-.site-logo--invert {
-  filter: brightness(0) invert(1);
+   otherwise disappear against the navy-deep panel. Lifts every token to a
+   light, legible cream/white without losing the hierarchy. */
+.site-logo--invert,
+.site-logo--invert .site-logo__primary,
+.site-logo--invert .site-logo__partner {
+  color: #ffffff;
 }
 
-/* Slightly tighter sizing in the footer so the logo sits comfortably above
+.site-logo--invert .site-logo__at {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-logo--invert .site-logo__secondary {
+  border-left-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Slightly tighter sizing in the footer so the lockup sits comfortably above
    the tagline copy. */
-.footer-logo .site-logo {
-  height: 56px;
+.footer-logo .site-logo__primary {
+  font-size: 30px;
+}
+.footer-logo .site-logo__partner {
+  font-size: 14px;
 }
 
-/* Responsive trim for narrower viewports. */
-@media (max-width: 600px) {
+/* Landing page uses the same rhythm as the main header by default — no extra
+   overrides needed, but keep the scoping hook available. */
+
+/* Responsive trim. Below 720px we stack the secondary line under the primary
+   wordmark so the lockup fits alongside the burger + tap-to-call button on
+   phone widths without pushing them off-screen. */
+@media (max-width: 720px) {
   .site-logo {
-    height: 46px;
+    align-items: flex-start;
+    gap: 8px;
   }
-  .footer-logo .site-logo {
-    height: 50px;
+  .site-logo__primary {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+  }
+  .site-logo__secondary {
+    padding-left: 10px;
+    transform: translateY(1px);
+  }
+  .site-logo__partner {
+    font-size: 13px;
+  }
+  .site-logo__at {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .site-logo__primary {
+    font-size: 26px;
+    letter-spacing: 1.5px;
+  }
+  .site-logo__secondary {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+    padding-left: 0;
+    border-left: none;
+    transform: none;
+  }
+  .site-logo__partner {
+    font-size: 12px;
+    letter-spacing: 0.4px;
   }
 }

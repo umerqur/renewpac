@@ -37,7 +37,11 @@ export default function Header() {
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-inner">
-        <Link to="/" className="logo-link" aria-label="Renew PAC home">
+        <Link
+          to="/"
+          className="logo-link"
+          aria-label="Renew at Sherlase Clinic & Spa — home"
+        >
           <Logo />
         </Link>
 
